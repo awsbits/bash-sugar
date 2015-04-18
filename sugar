@@ -1,25 +1,32 @@
-#!/bin/bash
+# Default paths
+ADIR=~/.sugard/aliases
+CDIR=~/.sugard/conds
+FDIR=~/.sugard/funcs
 
-if [[ -r ~/.config/sugar.conf ]]; then
-  . ~/.config/sugar.conf
-fi
+# Default configs
+ACONF=$ADIR/alias.conf
+CCONF=$CDIR/cond.conf
+FCONF=$FDIR/func.conf
 
-if [[ -d ~/.sugard/conds && \
-  `ls -1 | wc -l` > 0 ]]
-then
-  for cnd in `ls -1 ~/sugard/conds/*.cnd`
-  do
-    . ~/.sugard/conds/$cnd
-  done
-fi
+# Default sourcable file extensions
+AEXT=alias
+CEXT=cond
+FEXT=func
 
+# Default bootstrap files
+CDEF=$CDIR/.default
+FDEF=$FDIR/.default
 
-#if [[ -d ~/.aliases ]]; then
-#  if [[ `ls -1 ~/.aliases/*.alias | wc -l` > 0 ]]; then
-#    for a in `ls -1 ~/.aliases`
-#    do
-#      . ~/.aliases/$a
-#    done
-#  fi
-#fi
+# Default residual removal
+FREM=$FDIR/.teardown
 
+# Mode of operation. Valid selections are "alias" or "cond".
+MODE="alias"
+
+# Enter a non-zero string to enable logging to stdout
+LOG=true
+
+# Sugar bootstrap
+. $FDEF
+. $CDEF
+. $FREM

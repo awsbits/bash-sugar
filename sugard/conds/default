@@ -9,3 +9,8 @@ case $MODE in
     loadmode "C"
     ;;
 esac
+
+if [[ `id -u` == 0 && -r $ADIR/root.alias ]]
+then
+  . $ADIR/root.alias
+fi

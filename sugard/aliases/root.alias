@@ -1,0 +1,3 @@
+alias rules='iptables -nvL --line-numbers'
+alias tcpsvc='netstat -lnpt'
+alias udpsvc='netstat -lnpu'
