@@ -41,6 +41,7 @@ Systemd systems, drop this in a .cond file::
   fi
 
 Alternately, consider deploying some sugar under root:
+(this is done by the default cond anyway)
 
   if [[ `id -u` == 0 ]]
   then
@@ -59,5 +60,3 @@ sourcing a function from a condition file, or even writing a
 conditional directly in an alias file.  The point is this is one
 thought-out approach to bash sugar management.  Feel free to 
 hack it up to your needs.
-
-

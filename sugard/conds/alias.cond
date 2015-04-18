@@ -1,0 +1,4 @@
+if [[ -r $ACONF ]]
+then
+  . $ACONF
+fi
