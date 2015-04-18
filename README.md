@@ -45,14 +45,14 @@ Alternately, consider deploying some sugar under root:
 
     if [[ `id -u` == 0 ]]
     then
-    . $ADIR/root.alias
+      . $ADIR/root.alias
     fi
 
 Or source a set of functions based on the current SSID:
 
     if [[ `iwconfig wlan0 | grep -iPo "(?<=essid).+$"` == "worknet" ]]
     then
-    . $FDIR/work.func
+      . $FDIR/work.func
     fi
 
 Now, admittedly, this simple framework has no protection against
