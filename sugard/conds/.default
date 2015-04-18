@@ -1,0 +1,11 @@
+# This default file contains conditions
+# required by sugar itself.  Tread lightly.
+
+case $MODE in
+  "alias")
+    loadmode "A"
+    ;;
+  "cond")
+    loadmode "C"
+    ;;
+esac

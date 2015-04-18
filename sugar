@@ -1,0 +1,25 @@
+#!/bin/bash
+
+if [[ -r ~/.config/sugar.conf ]]; then
+  . ~/.config/sugar.conf
+fi
+
+if [[ -d ~/.sugard/conds && \
+  `ls -1 | wc -l` > 0 ]]
+then
+  for cnd in `ls -1 ~/sugard/conds/*.cnd`
+  do
+    . ~/.sugard/conds/$cnd
+  done
+fi
+
+
+#if [[ -d ~/.aliases ]]; then
+#  if [[ `ls -1 ~/.aliases/*.alias | wc -l` > 0 ]]; then
+#    for a in `ls -1 ~/.aliases`
+#    do
+#      . ~/.aliases/$a
+#    done
+#  fi
+#fi
+

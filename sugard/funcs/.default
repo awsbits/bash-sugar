@@ -1,0 +1,33 @@
+# This default file contains functions
+# required by sugar itself.  Tread lightly.
+
+srcall() {
+  for f in `ls -1 $1/*.$2`
+  do
+    . $f
+  done
+}
+
+logsgr() {
+  [[ -n "$LOG" ]] && echo $1
+}
+
+loadmode() {
+  conf="$1CONF"
+  dir="$1DIR"
+  ext="$1EXT"
+  lines=`wc -l ${!conf} 2&>/dev/null | awk '{print $1}'`
+  count=`ls -1 ${!dir}/*.${!ext} | wc -l | grep -iPo "^[0-9]+"`
+
+  if [[ -r ${!conf} && $lines > 0 ]]
+  then
+    logsgr "Sugar handing over to "${!conf}
+    . ${!conf}
+  elif [[ -d ${!dir} && $count > 0 ]]
+    logsgr "Sugar sourcing everything in "${!dir}
+    srcall ${!dir} ${!ext}
+    logsgr "Done"
+  else
+    logsgr "Sugar found nothing to source."
+  fi
+}

@@ -1,0 +1,2 @@
+alias files='rpm -ql'
+alias rql='repoquery -l'

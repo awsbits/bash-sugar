@@ -1,0 +1,6 @@
+# Remove any lingering effects of sugar's bootstrap
+
+unset srcall
+unset logsgr
+unset loadmode
+
