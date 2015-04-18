@@ -34,26 +34,26 @@ leads to further sourcing.
 For instance, to differentiate between SysVInit and
 Systemd systems, drop this in a .cond file::
 
-  which systemctl
-  if [[ !? == 0 ]]
-  then
-    . $ADIR/systemd.alias
-  fi
+    which systemctl
+    if [[ !? == 0 ]]
+    then
+      . $ADIR/systemd.alias
+    fi
 
 Alternately, consider deploying some sugar under root:
 (this is done by the default cond anyway)
 
-  if [[ `id -u` == 0 ]]
-  then
+    if [[ `id -u` == 0 ]]
+    then
     . $ADIR/root.alias
-  fi
+    fi
 
 Or source a set of functions based on the current SSID:
 
-  if [[ `iwconfig wlan0 | grep -iPo "(?<=essid).+$"` == "worknet" ]]
-  then
+    if [[ `iwconfig wlan0 | grep -iPo "(?<=essid).+$"` == "worknet" ]]
+    then
     . $FDIR/work.func
-  fi
+    fi
 
 Now, admittedly, this simple framework has no protection against
 sourcing a function from a condition file, or even writing a
