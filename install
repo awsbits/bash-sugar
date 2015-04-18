@@ -16,4 +16,12 @@ cp ./sugar $INSTDIR
 mv $CDIR/default $CDEF
 mv $FDIR/default $FDEF
 mv $FDIR/teardown $FREM
+
+grep -P "sugar" ~/.bash_profile
+if [[ ! !? == 0 ]]
+then
+  echo "echo 'Sourcing sugar...'" >> ~/.bash_profile
+  echo ". $INSTDIR/sugar" >> ~/.bash_profile
+fi
+
 echo "Done"
