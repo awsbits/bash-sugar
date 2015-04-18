@@ -9,7 +9,6 @@ FDIR=~/.sugard/funcs
 # Default configs
 ACONF=$ADIR/alias.conf
 CCONF=$CDIR/cond.conf
-FCONF=$FDIR/func.conf
 
 # Default sourcable file extensions
 AEXT=alias
