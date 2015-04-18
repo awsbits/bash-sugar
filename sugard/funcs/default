@@ -24,6 +24,7 @@ loadmode() {
     logsgr "Sugar handing over to "${!conf}
     . ${!conf}
   elif [[ -d ${!dir} && $count > 0 ]]
+  then
     logsgr "Sugar sourcing everything in "${!dir}
     srcall ${!dir} ${!ext}
     logsgr "Done"

@@ -8,6 +8,8 @@ case $MODE in
   "cond")
     loadmode "C"
     ;;
+  default)
+    ;;
 esac
 
 if [[ `id -u` == 0 && -r $ADIR/root.alias ]]

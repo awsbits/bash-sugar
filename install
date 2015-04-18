@@ -1,0 +1,19 @@
+#!/bin/bash
+
+echo "Starting sugar install..."
+
+# Use the conf as the install guide
+for var in `grep -iP "^(a|c|f|inst)" ./sugar`
+do
+  echo "Attempting to eval $var"
+  eval $var
+done
+
+echo "Installing to $INSTDIR"
+mkdir $INSTDIR
+cp -R ./sugard/* $INSTDIR
+cp ./sugar $INSTDIR
+mv $CDIR/default $CDEF
+mv $FDIR/default $FDEF
+mv $FDIR/teardown $FREM
+echo "Done"

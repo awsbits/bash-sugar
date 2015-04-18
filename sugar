@@ -1,3 +1,6 @@
+# Default install dir
+INSTDIR=~/.sugard
+
 # Default paths
 ADIR=~/.sugard/aliases
 CDIR=~/.sugard/conds
@@ -20,7 +23,7 @@ FDEF=$FDIR/.default
 # Default residual removal
 FREM=$FDIR/.teardown
 
-# Mode of operation. Valid selections are "alias" or "cond".
+# Mode of operation. Valid selections are "alias" or "cond"
 MODE="alias"
 
 # Enter a non-zero string to enable logging to stdout
@@ -30,3 +33,4 @@ LOG=true
 . $FDEF
 . $CDEF
 . $FREM
+
