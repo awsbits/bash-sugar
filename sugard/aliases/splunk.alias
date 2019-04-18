@@ -1,0 +1,6 @@
+# Add splunk to path first
+echo $PATH | grep -P "/opt/splunk/bin" >/dev/null
+if [[ $? > 0 ]]
+then
+  export PATH=$PATH:/opt/splunk/bin
+fi
